@@ -1,6 +1,6 @@
 
 var data;
-$.getJSON('../static/bukao2013.json').done(function(json) {
+$.getJSON('static/bukao2013.json').done(function(json) {
   data = json
 });
 

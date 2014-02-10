@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html s>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="南京邮电大学补考查询">
+    <title>南京邮电大学补考查询</title>
+    <link rel="stylesheet" href="http://cdn.staticfile.org/typo.css/1.1/typo.css" />
+    <link rel="stylesheet" href="static/app.css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+</head>
+<body ng-controller="libListCtrl">
+
+<div id="header" class="wrapper">
+  <h1 class="typo-h1"><a href="/">南京邮电大学补考查询</a></h1>
+  <div id="nav">
+    <a href="/">首页</a> /
+    <a href="about.html">简介</a>
+
+
+  </div>
+  <p id="purpose" class="typo-p">
+    根据教务处的表格构建的补考信息查询网站，输入学号即可查询。
+    <br><a href="http://jwc.njupt.edu.cn/s/24/t/923/a/56607/info.jspy">2013-2014学年第一学期补考安排表</a>
+  </p>
+ 
+
+ 
+</div>
+
+
+
+<div id="search" class="wrapper intro" >
+  
+
+<h2>南京邮电大学补考查询</h1>
+
+<p>基于<a href="http://staticfile.org">staticfile</a>开源的代码修改而成,
+
+<a href="https://github.com/mmclub/bukao.nupter.org">源代码</a></p>
+
+<p>欢迎提出改进意见，我们的联系方式见<a href="http://nupter.org">南邮移动互联网俱乐部主页</a></p>
+
+
+<p>数据源来自教务处网站，用Office将教务处的Excel表格转成CSV文件，用<code>csv2json.rb</code>这个Ruby脚本将其转换成JSON数据。前端采用AngularJS，一次将JSON全部读取，然后根据搜搜索框的学号查询实时展现数据。一个小小的问题是没写API服务器，ajax请求的bukao2013.json文件包含全部数据，有1.9MB。。。载入时间会略长。不过做成这种全静态的站点也有好处，找个静态主机随便一扔就行了。</p>
+
+<p>源代码文件结构</p>
+
+<pre><code>
+├── CNAME        
+├── README.md
+├── about.html    
+├── favicon.ico
+├── index.html     
+└── static
+    ├── app.css
+    ├── app.js     
+    ├── bukao2013.csv
+    ├── bukao2013.json
+    └── csv2json.rb
+</code></pre>
+</div>
+
+
+
+
+
+
+<div id="footer" class="typo wrapper">
+  
+ <p> <small>&copy; CopyRight 2014 <a href="http://nupter.org">南邮移动互联网俱乐部</a> </small></p>
+
+  <p>由<a href="http://linxiangyu.org"> Lin Xiangyu</a> 基于 <a href="http://staticfile.org/"> staticfile.org</a>修改</p>
+</div>
+
+
+
+
+</body>
+</html>

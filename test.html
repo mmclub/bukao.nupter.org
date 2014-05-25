@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="南京邮电大学补考查询">
+    <title>南京邮电大考试查询</title>
+    <link rel="stylesheet" href="http://cdn.staticfile.org/typo.css/1.1/typo.css" />
+    <link rel="stylesheet" href="static/app.css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47900869-2', 'nupter.org');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body ng-controller="libListCtrl">
+
+<a href="https://github.com/mmclub/bukao.nupter.org"><img style="position: absolute; top: 0; right: 0; border: 0;" src="static/forkme_right_gray_6d6d6d.png " alt="Fork me on GitHub"></a>
+<div id="header" class="wrapper">
+  <h1 class="typo-h1"><a href="/">南京邮电大学考试查询</a></h1>
+  <div id="nav">
+    <a href="/">首页</a> /
+    <a href="about.html">简介</a>
+  </div>
+  <p id="purpose" class="typo-p">
+    根据教务处的表格构建的考试信息查询网站，输入学号即可查询。目前仅支持2014年学校安排的考试，没有学院自己组织的考试
+    <br><a href="http://jwc.njupt.edu.cn/s/24/t/923/f4/1d/info62493.htm">2013-2014学年第二学期期末考试安排表（学校组织 )</a>
+    <br>
+    <a href="http://jwc.njupt.edu.cn/s/24/t/923/e7/46/info59206.htm
+">2013-2014学年第二学期课程结束考试安排表(学院组织)
+</a>
+
+  </p>
+ 
+
+  <div id="query"><input id="key" type="text" ng-model="query" ng-change="onChange()" placeholder="请输入班级号码，比如B120403 , 即时显示结果(首次查询可能略有延迟)" autofocus autocomplete="off"/></div>
+</div>
+
+
+
+<div id="search" ng-controller="libListCtrl">
+  <ol id="libs">
+    <li class="item typo" ng-repeat="item in list">
+      <h3 > {{item.text}}</h3>
+    </li>
+  </ol>
+</div>
+
+
+
+
+
+
+<div id="footer" class="typo wrapper">
+  
+ <p> <small>&copy; CopyRight 2014 <a href="http://nupter.org">南邮移动互联网俱乐部</a> </small></p>
+
+  <p>由<a href="http://linxiangyu.org"> Lin Xiangyu</a> 基于 <a href="http://staticfile.org/"> staticfile.org</a>修改</p>
+</div>
+
+
+
+<script src="http://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/angular.js/1.1.5/angular.min.js"></script>
+<script src="static/test.js"></script>
+
+
+</body>
+</html>

@@ -1,23 +1,18 @@
 require 'csv'
 require 'json'
 
-csv = CSV.parse(open("bukao2013.csv").read)
+csv = CSV.parse(open("test.csv").read)
 
 h = {}
 csv.each do |row|
-  if !h[row[4]] 
-    h[row[4]] = []
+  if !h[row[5]] 
+    h[row[5]] = []
   end
-  if row[4] == "B13040505" 
-    row << "^_^ 补考必过~"
-  end
-  h[row[4]] << row
-  
-
+  h[row[5]] << row
 end
 
 
 
-open("bukao2013.json", "w") do |f|
+open("test2014.json", "w") do |f|
   f.write JSON.pretty_generate(h)
 end

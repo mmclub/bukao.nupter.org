@@ -1,12 +1,15 @@
 
 
-var data = JSON.parse(localStorage.getItem('data'));
+
+var cacheKey = "nupt-test-2014"
+
+var data = JSON.parse(localStorage.getItem(cacheKey));
 
 if (data === null || data === undefined){
 
   $.getJSON('static/test2014.json').done(function(json) {
     data = json
-    localStorage.setItem('data', JSON.stringify(data));
+    localStorage.setItem(cacheKey, JSON.stringify(data));
   });
 
 }
@@ -20,10 +23,12 @@ function libListCtrl($scope) {
     var list =  data[$scope.query.toUpperCase()];
     if (list) {
       console.log(list.length);
+      var a = []
       for (var i = 0; i < list.length; i++){
-        list[i] = {text: list[i].join(" ")};
+        console.log(list[i])
+        a.push({text: list[i].join(" ")});
       }
-      $scope.list = list;
+      $scope.list = a
     }else {
       $scope.list = undefined;
     }

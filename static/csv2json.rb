@@ -1,7 +1,7 @@
 require 'csv'
 require 'json'
 
-csv = CSV.parse(open("test.csv").read)
+csv = CSV.parse(open("kaoshi.csv").read)
 
 h = {}
 csv.each do |row|

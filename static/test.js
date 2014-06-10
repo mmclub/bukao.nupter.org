@@ -1,7 +1,7 @@
 
 
 
-var cacheKey = "nupt-test-2014"
+var cacheKey = "nupt-test-2014-1"
 
 var data = JSON.parse(localStorage.getItem(cacheKey));
 

@@ -1,7 +1,7 @@
 require 'csv'
 require 'json'
 
-csv = CSV.parse(open("kaoshi.csv").read)
+csv = CSV.parse(open("2014.csv").read)
 
 h = {}
 csv.each do |row|
@@ -13,6 +13,6 @@ end
 
 
 
-open("test2014.json", "w") do |f|
+open("bukao2014.json", "w") do |f|
   f.write JSON.pretty_generate(h)
 end

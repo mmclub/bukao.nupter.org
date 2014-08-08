@@ -85,3 +85,6 @@ a{color:#1abc9c;}
     #query{border-width:5px 0;width:100%;position:absolute;bottom:-10px;left:0;}
     #header{position:relative;padding-bottom:40px;}
 }
+#small-text {
+    font-size: 12px;
+}
